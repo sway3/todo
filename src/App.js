@@ -37,12 +37,18 @@ function App() {
     });
   };
 
+  const editTodoHandler = (todoId) => {};
+
   return (
     <>
       <GlobalStyle />
       <h1 style={{ fontSize: "8rem", fontWeight: "900" }}>TODO</h1>
       <AddNewTodo onAddTodo={addTodoHandler} />
-      <TodoList onRemoveTodo={removeTodoHandler} dataSet={todos} />
+      <TodoList
+        onRemoveTodo={removeTodoHandler}
+        onEditTodo={editTodoHandler}
+        dataSet={todos}
+      />
     </>
   );
 }

@@ -12,6 +12,7 @@ const TodoList = (props) => {
             title={todo.title}
             date={todo.date}
             onDelete={() => props.onRemoveTodo(todo.id)}
+            onEdit={() => props.onEditTodo(todo.id)}
           />
         );
       })}
