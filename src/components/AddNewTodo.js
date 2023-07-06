@@ -34,7 +34,7 @@ const AddNewTodo = (props) => {
       date: date,
     };
 
-    console.log(date);
+    console.log(TODO);
 
     props.onAddTodo(TODO);
 
