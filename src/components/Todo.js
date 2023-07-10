@@ -1,17 +1,29 @@
-import React from "react";
-import Button from "./UI/Button";
+import React from 'react';
+import Button from './UI/Button';
+
+import styled from 'styled-components';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+
+const StyledDeleteIcon = styled(DeleteIcon)`
+  color: grey;
+  font-size: 2rem;
+  cursor: pointer;
+`;
+
+const StyledEditIcon = styled(EditIcon)`
+  color: grey;
+  font-size: 2rem;
+  cursor: pointer;
+`;
 
 const Todo = (props) => {
   return (
     <>
-      <h3>{props.title}</h3>
       <p>{props.date}</p>
-      <Button onClick={props.onEdit} color="black" background="yellow">
-        edit
-      </Button>
-      <Button onClick={props.onDelete} color="white" background="blue">
-        remove
-      </Button>
+      <h3>{props.title}</h3>
+      <StyledEditIcon onClick={props.onEdit} />
+      <StyledDeleteIcon onClick={props.onDelete} />
     </>
   );
 };

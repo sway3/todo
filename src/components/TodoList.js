@@ -1,29 +1,37 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import Todo from "./Todo";
-import AddNewTodo from "./AddNewTodo";
-import EditTodo from "./EditTodo";
+import Todo from './Todo';
+import AddNewTodo from './AddNewTodo';
+import EditTodo from './EditTodo';
+
+import styled from 'styled-components';
 
 const SAVED_TODO = [
   {
-    id: "e1",
-    title: "Javascript",
-    date: "2021-08-01",
+    id: 'e1',
+    title: 'Javascript',
+    date: '2021-08-01',
     isEditing: false,
   },
   {
-    id: "e2",
-    title: "Github",
-    date: "2021-08-02",
+    id: 'e2',
+    title: 'Github',
+    date: '2021-08-02',
     isEditing: false,
   },
   {
-    id: "e3",
-    title: "Laundry",
-    date: "2021-08-03",
+    id: 'e3',
+    title: 'Laundry',
+    date: '2021-08-03',
     isEditing: false,
   },
 ];
+
+const TodoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const TodoList = () => {
   const [todos, setTodos] = useState(SAVED_TODO);
@@ -63,7 +71,7 @@ const TodoList = () => {
   };
 
   return (
-    <>
+    <TodoWrapper>
       <AddNewTodo onAddTodo={addTodoHandler} />
       {todos.map((todo) => {
         return todo.isEditing ? (
@@ -84,7 +92,7 @@ const TodoList = () => {
           />
         );
       })}
-    </>
+    </TodoWrapper>
   );
 };
 

@@ -1,10 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const StyledInputBox = styled.input`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
 
+  display: block;
   border: 1px solid black;
+  margin: 0 0 0.5rem 0;
   border-radius: 7px;
   padding: 0.5rem 1rem;
 `;

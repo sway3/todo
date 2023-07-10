@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const StyledButton = styled.button`
-  width: 80px;
+  width: 300px;
   height: 40px;
   color: ${(props) => props.color};
   background: ${(props) => props.background};
