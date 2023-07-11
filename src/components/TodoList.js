@@ -6,6 +6,8 @@ import EditTodo from './EditTodo';
 
 import styled from 'styled-components';
 
+import Card from './UI/Card';
+
 const SAVED_TODO = [
   {
     id: 'e1',
@@ -74,22 +76,26 @@ const TodoList = () => {
     <TodoWrapper>
       <AddNewTodo onAddTodo={addTodoHandler} />
       {todos.map((todo) => {
-        return todo.isEditing ? (
-          <EditTodo
-            key={todo.id}
-            id={todo.id}
-            title={todo.title}
-            date={todo.date}
-            onUpdateTodo={updateTodoHandler}
-          />
-        ) : (
-          <Todo
-            key={todo.id}
-            title={todo.title}
-            date={todo.date}
-            onDelete={() => removeTodoHandler(todo.id)}
-            onEdit={() => editTodoHandler(todo.id)}
-          />
+        return (
+          <Card key={todo.id} width='400px'>
+            {todo.isEditing ? (
+              <EditTodo
+                key={todo.id}
+                id={todo.id}
+                title={todo.title}
+                date={todo.date}
+                onUpdateTodo={updateTodoHandler}
+              />
+            ) : (
+              <Todo
+                key={todo.id}
+                title={todo.title}
+                date={todo.date}
+                onDelete={() => removeTodoHandler(todo.id)}
+                onEdit={() => editTodoHandler(todo.id)}
+              />
+            )}
+          </Card>
         );
       })}
     </TodoWrapper>

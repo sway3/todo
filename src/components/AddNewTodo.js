@@ -9,6 +9,7 @@ const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 0 1rem 0;
 `;
 
 const AddNewTodo = (props) => {
@@ -57,14 +58,14 @@ const AddNewTodo = (props) => {
         value={title}
         placeholder='Title'
         onChange={titleChangeHandler}
-        width='300px'
+        width='400px'
         height='40px'
       />
       <InputBox
         type='date'
         value={date}
         onChange={dateChangeHandler}
-        width='300px'
+        width='400px'
         height='40px'
       />
       <Button type='submit'>Submit</Button>

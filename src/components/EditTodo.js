@@ -1,7 +1,16 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import InputBox from "./UI/InputBox";
-import Button from "./UI/Button";
+import styled from 'styled-components';
+
+import InputBox from './UI/InputBox';
+import Button from './UI/Button';
+
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+`;
 
 const EditTodo = (props) => {
   const [newTitle, setNewTitle] = useState(props.title);
@@ -30,32 +39,18 @@ const EditTodo = (props) => {
 
     console.log(updatedTodo);
 
-    setNewTitle("");
-    setNewDate("");
+    setNewTitle('');
+    setNewDate('');
   };
 
   return (
-    <>
-      <form onSubmit={todoUpdateHandler}>
-        <InputBox
-          type="text"
-          value={newTitle}
-          onChange={newTitleChangeHandler}
-          width="300px"
-          height="40px"
-        />
-        <InputBox
-          type="date"
-          value={newDate}
-          onChange={newDateChangeHandler}
-          width="300px"
-          height="40px"
-        />
-        <Button type="submit" color="black" background="yellow">
-          Update
-        </Button>
-      </form>
-    </>
+    <StyledForm onSubmit={todoUpdateHandler}>
+      <InputBox type='text' value={newTitle} onChange={newTitleChangeHandler} />
+      <InputBox type='date' value={newDate} onChange={newDateChangeHandler} />
+      <Button type='submit' color='black' background='yellow'>
+        Update
+      </Button>
+    </StyledForm>
   );
 };
 
